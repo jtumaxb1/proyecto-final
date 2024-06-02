@@ -13,6 +13,8 @@ namespace EstructuraDatos.Arbol
 
         int salto = 0;
 
+        public int cantidad = 0;
+
         protected NodoAvl raiz;
 
         public ArbolAVL()
@@ -25,7 +27,7 @@ namespace EstructuraDatos.Arbol
             return raiz;
         }
 
-        public Object buscar(string dato)
+        public Object buscar(int dato)
         {
             if (raiz == null)
             {
@@ -37,7 +39,7 @@ namespace EstructuraDatos.Arbol
             }
         }
 
-        protected Object buscar(NodoArbolBusqueda raizSub, string buscado)
+        protected Object buscar(NodoArbolBusqueda raizSub, int buscado)
         {
             try
             {
@@ -143,6 +145,36 @@ namespace EstructuraDatos.Arbol
             return n2;
         }
 
+        public void actualizar(Object valor)
+        {
+            Comparador dato;
+            Logical h = new Logical(false);
+            dato = (Comparador)valor;
+            raiz = actualizarAvl(raiz, dato, h);
+        }
+
+        private NodoAvl actualizarAvl(NodoAvl raiz, Comparador dt, Logical h) {
+            NodoAvl n1;
+            if (dt.igualQue(raiz.valorNodo()))
+            {
+                raiz.nuevoValor(dt);
+                h.setLogical(true);
+            }
+            else if (dt.menorQue(raiz.valorNodo()))
+            {
+                NodoAvl iz;
+                iz = actualizarAvl((NodoAvl)raiz.subArbolIzdo(), dt, h);
+                raiz.ramaIzdo(iz);
+            }
+            else if (dt.mayorQue(raiz.valorNodo()))
+            {
+                NodoAvl dr;
+                dr = actualizarAvl((NodoAvl)raiz.subArbolDcho(), dt, h);
+                raiz.ramaDcho(dr);
+            }
+            return raiz;
+        }
+
         public void insertar(Object valor)//throws Exception
         {
             Comparador dato;
@@ -158,6 +190,7 @@ namespace EstructuraDatos.Arbol
             if (raiz == null)
             {
                 raiz = new NodoAvl(dt);
+                this.cantidad += 1;
                 h.setLogical(true);
             }
             else if (dt.menorQue(raiz.valorNodo()))
@@ -360,11 +393,11 @@ namespace EstructuraDatos.Arbol
             return raiz == null;
         }
 
-        public static List<string> orden(NodoArbolBusqueda r, List<string> lista)
+        public static List<Object> orden(NodoArbolBusqueda r, List<Object> lista)
         {
             if (r != null)
             {
-                lista.Add(r.visitar());
+                lista.Add(r.valorNodo());
                 if (r.subArbolIzdo() != null)
                 {
                     orden(r.subArbolIzdo(), lista);

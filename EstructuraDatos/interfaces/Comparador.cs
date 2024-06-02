@@ -9,9 +9,9 @@ namespace EstructuraDatos.interfaces
     public interface Comparador
     {
         // Buscado
-        bool igualQue(string q);
-        bool menorQue(string q);
-        bool mayorQue(string q);
+        bool igualQue(int q);
+        bool menorQue(int q);
+        bool mayorQue(int q);
 
         // Insertar y Eliminar
         bool igualQue(Object q);

@@ -9,71 +9,49 @@ namespace EstructuraDatos.Clases
 {
     public class Equipo : Comparador
     {
+        public int id { get; set; }
         public string nombre { get; set; }
         public string pais { get; set; }
         public string liga { get; set; }
 
-        public Equipo(string nombre, string pais, string liga) {
+        public Equipo(int id, string nombre, string pais, string liga) {
+            this.id = id;
             this.nombre = nombre;
             this.pais = pais;
             this.liga = liga;
         }
 
-        public bool igualQue(string q)
+        public bool igualQue(int q)
         {
-            return this.nombre == q;
+            return this.id == q;
         }
 
-        public bool menorQue(string q)
+        public bool menorQue(int q)
         {
-            if (this.nombre.CompareTo(q) < 0)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
+            return this.id < q;
         }
 
-        public bool mayorQue(string q)
+        public bool mayorQue(int q)
         {
-            if (this.nombre.CompareTo(q) > 0)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
+            return this.id > q;
         }
 
         public bool igualQue(object q)
         {
             Equipo q2 = (Equipo)q;
-            return this.nombre == q2.nombre;
+            return this.id == q2.id;
         }
 
         public bool menorQue(object q)
         {
             Equipo q2 = (Equipo)q;
-            if (this.nombre.CompareTo(q2.nombre) < 0)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
+            return this.id < q2.id;
         }
 
         public bool mayorQue(object q)
         {
             Equipo q2 = (Equipo)q;
-            if (this.nombre.CompareTo(q2.nombre) > 0)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
+            return this.id > q2.id;
         }
     }
 }
