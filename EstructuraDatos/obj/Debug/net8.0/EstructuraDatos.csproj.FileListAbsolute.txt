@@ -10,3 +10,15 @@ C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\Pro
 C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\ProyectoFinal\EstructuraDatos\obj\Debug\net8.0\refint\EstructuraDatos.dll
 C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\ProyectoFinal\EstructuraDatos\obj\Debug\net8.0\EstructuraDatos.pdb
 C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\ProyectoFinal\EstructuraDatos\obj\Debug\net8.0\ref\EstructuraDatos.dll
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\bin\Debug\net8.0\EstructuraDatos.deps.json
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\bin\Debug\net8.0\EstructuraDatos.dll
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\bin\Debug\net8.0\EstructuraDatos.pdb
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\obj\Debug\net8.0\EstructuraDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\obj\Debug\net8.0\EstructuraDatos.AssemblyInfoInputs.cache
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\obj\Debug\net8.0\EstructuraDatos.AssemblyInfo.cs
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\obj\Debug\net8.0\EstructuraDatos.csproj.CoreCompileInputs.cache
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\obj\Debug\net8.0\EstructuraDatos.sourcelink.json
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\obj\Debug\net8.0\EstructuraDatos.dll
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\obj\Debug\net8.0\refint\EstructuraDatos.dll
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\obj\Debug\net8.0\EstructuraDatos.pdb
+C:\Users\ferna\OneDrive\Documents\Universidad\Quinto Semestre\Programacion 3\proyecto-final\EstructuraDatos\obj\Debug\net8.0\ref\EstructuraDatos.dll

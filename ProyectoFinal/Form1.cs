@@ -16,19 +16,6 @@ namespace ProyectoFinal
             InitializeComponent();
         }
 
-        private void btnInsertar_Click(object sender, EventArgs e)
-        {
-            //Equipo equipo = new Equipo(this.txtNombre.Text, this.txtPais.Text, this.txtLiga.Text);
-            //arbolAVL.insertar(equipo);
-            //String ejemplo = "Hola";
-        }
-
-        private void btnEquipo_Click(object sender, EventArgs e)
-        {
-            /* FrmEquipos frmEquipos = new FrmEquipos(arbolAVL);
-            frmEquipos.ShowDialog(); */
-        }
-
         private void btnTorneos_Click(object sender, EventArgs e)
         {
             FrmTorneos frmTorneos = new FrmTorneos(tablaHashTorneo, tablaHashJugador, tablaHashPartido);

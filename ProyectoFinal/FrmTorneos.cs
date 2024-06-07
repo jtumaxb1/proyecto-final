@@ -91,6 +91,8 @@ namespace ProyectoFinal
                 tablaHashTorneo.Eliminar(liga);
                 this.btnActualizar.Enabled = false;
                 this.btnEliminar.Enabled = false;
+                this.btnEquipos.Enabled = false;
+                this.btnPartidos.Enabled = false;
                 MessageBox.Show("El torneo fue eliminado con exito", "Eliminacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarDatos();
             }

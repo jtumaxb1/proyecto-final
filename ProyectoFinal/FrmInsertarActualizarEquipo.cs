@@ -16,6 +16,7 @@ namespace ProyectoFinal
     {
         public ArbolAVL arbol;
         public Equipo actualizarEquipo;
+        public string nombreEquipo;
         public string liga;
         public FrmInsertarActualizarEquipo(ArbolAVL arbol, FrmEquipos frmEquipos, Equipo equipoActualizar, string liga)
         {
@@ -28,6 +29,7 @@ namespace ProyectoFinal
                 this.txtNombre.Text = equipoActualizar.nombre;
                 this.txtPais.Text = equipoActualizar.pais;
                 this.txtLiga.Text = equipoActualizar.liga;
+                this.nombreEquipo = equipoActualizar.nombre;
             }
             else
             {
@@ -57,6 +59,7 @@ namespace ProyectoFinal
             {
                 if (actualizarEquipo == null)
                 {
+
                     Equipo equipo = new Equipo((this.arbol.cantidad + 1), this.txtNombre.Text, this.txtPais.Text, this.txtLiga.Text);
                     arbol.insertar(equipo);
                     MessageBox.Show("Equipo insertado con exito", "Insertar Equipo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -65,8 +68,8 @@ namespace ProyectoFinal
                 }
                 else
                 {
-                    actualizarEquipo = new Equipo(actualizarEquipo.id, this.txtNombre.Text, this.txtPais.Text, this.txtLiga.Text);
-                    arbol.actualizar(actualizarEquipo);
+                    Equipo nuevoActualizarEquipo = new Equipo(actualizarEquipo.id, this.txtNombre.Text, this.txtPais.Text, this.txtLiga.Text);
+                    arbol.actualizar(nuevoActualizarEquipo, this.nombreEquipo);
                     MessageBox.Show("Equipo actualizado con exito", "Actualizar Equipo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Agregar();
                     this.Close();

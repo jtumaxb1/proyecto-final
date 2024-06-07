@@ -140,20 +140,20 @@ namespace ProyectoFinal
                 {
                     equipoLocalPartidoActual.puntos += 1;
                     equipoVisitantePartidoActual.puntos += 1;
-                    arbol.actualizar(equipoLocalPartidoActual);
-                    arbol.actualizar(equipoVisitantePartidoActual);
+                    arbol.actualizar(equipoLocalPartidoActual, equipoLocalPartidoActual.nombre);
+                    arbol.actualizar(equipoVisitantePartidoActual, equipoVisitantePartidoActual.nombre);
                     MessageBox.Show($"El partido finalizo con un empate | marcador: {partido.marcadorLocal} - {partido.marcadorVisitante}", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (partido.marcadorLocal > partido.marcadorVisitante)
                 {
                     equipoLocalPartidoActual.puntos += 3;
-                    arbol.actualizar(equipoLocalPartidoActual);
+                    arbol.actualizar(equipoLocalPartidoActual, equipoLocalPartidoActual.nombre);
                     MessageBox.Show($"El partido finalizo con el equipo local como vencedor | marcador: {partido.marcadorLocal} - {partido.marcadorVisitante}", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     equipoVisitantePartidoActual.puntos += 3;
-                    arbol.actualizar(equipoVisitantePartidoActual);
+                    arbol.actualizar(equipoVisitantePartidoActual, equipoVisitantePartidoActual.nombre);
                     MessageBox.Show($"El partido finalizo con el equipo visitante como vencedor | marcador: {partido.marcadorLocal} - {partido.marcadorVisitante}", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.btnActualizar.Enabled = false;

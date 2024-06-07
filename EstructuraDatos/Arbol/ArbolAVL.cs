@@ -180,32 +180,32 @@ namespace EstructuraDatos.Arbol
             return n2;
         }
 
-        public void actualizar(Object valor)
+        public void actualizar(Object valor, string buscar)
         {
             Comparador dato;
             Logical h = new Logical(false);
             dato = (Comparador)valor;
-            raiz = actualizarAvl(raiz, dato, h);
+            raiz = actualizarAvl(raiz, dato, h, buscar);
         }
 
-        private NodoAvl actualizarAvl(NodoAvl raiz, Comparador dt, Logical h) {
+        private NodoAvl actualizarAvl(NodoAvl raiz, Comparador dt, Logical h, string buscar) {
             NodoAvl n1;
             Equipo dato = (Equipo)raiz.valorNodo();
-            if (dt.igualQue(dato.nombre))
+            if (dato.igualQue(buscar))
             {
                 raiz.nuevoValor(dt);
                 h.setLogical(true);
             }
-            else if (dt.menorQue(dato.nombre))
+            else if (dato.menorQue(buscar))
             {
                 NodoAvl iz;
-                iz = actualizarAvl((NodoAvl)raiz.subArbolIzdo(), dt, h);
+                iz = actualizarAvl((NodoAvl)raiz.subArbolIzdo(), dt, h, buscar);
                 raiz.ramaIzdo(iz);
             }
-            else if (dt.mayorQue(dato.nombre))
+            else if (dato.mayorQue(buscar))
             {
                 NodoAvl dr;
-                dr = actualizarAvl((NodoAvl)raiz.subArbolDcho(), dt, h);
+                dr = actualizarAvl((NodoAvl)raiz.subArbolDcho(), dt, h, buscar);
                 raiz.ramaDcho(dr);
             }
             return raiz;
