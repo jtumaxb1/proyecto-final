@@ -40,40 +40,47 @@
             // 
             // btnInsertarActualizar
             // 
-            btnInsertarActualizar.Location = new Point(63, 209);
+            btnInsertarActualizar.BackColor = SystemColors.MenuText;
+            btnInsertarActualizar.Font = new Font("Showcard Gothic", 12F);
+            btnInsertarActualizar.ForeColor = SystemColors.ControlLightLight;
+            btnInsertarActualizar.Location = new Point(13, 141);
             btnInsertarActualizar.Name = "btnInsertarActualizar";
-            btnInsertarActualizar.Size = new Size(97, 45);
+            btnInsertarActualizar.Size = new Size(134, 58);
             btnInsertarActualizar.TabIndex = 0;
-            btnInsertarActualizar.Text = "Insertar";
-            btnInsertarActualizar.UseVisualStyleBackColor = true;
+            btnInsertarActualizar.Text = "Guardar";
+            btnInsertarActualizar.UseVisualStyleBackColor = false;
             btnInsertarActualizar.Click += btnInsertarActualizar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(200, 209);
+            btnCancelar.BackColor = SystemColors.MenuText;
+            btnCancelar.Font = new Font("Showcard Gothic", 12F);
+            btnCancelar.ForeColor = SystemColors.ControlLightLight;
+            btnCancelar.Location = new Point(155, 141);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(103, 45);
+            btnCancelar.Size = new Size(134, 58);
             btnCancelar.TabIndex = 1;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Text = "Regresar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(101, 45);
+            txtNombre.Location = new Point(96, 11);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(193, 23);
             txtNombre.TabIndex = 2;
             // 
             // txtPais
             // 
-            txtPais.Location = new Point(101, 95);
+            txtPais.Location = new Point(96, 64);
             txtPais.Name = "txtPais";
             txtPais.Size = new Size(193, 23);
             txtPais.TabIndex = 3;
             // 
             // txtLiga
             // 
-            txtLiga.Location = new Point(101, 148);
+            txtLiga.Location = new Point(96, 112);
             txtLiga.Name = "txtLiga";
             txtLiga.Size = new Size(193, 23);
             txtLiga.TabIndex = 4;
@@ -81,27 +88,33 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(44, 48);
+            lblNombre.Font = new Font("Showcard Gothic", 12F);
+            lblNombre.ForeColor = SystemColors.ControlLightLight;
+            lblNombre.Location = new Point(12, 9);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(51, 15);
+            lblNombre.Size = new Size(78, 20);
             lblNombre.TabIndex = 5;
             lblNombre.Text = "Nombre";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(63, 98);
+            label2.Font = new Font("Showcard Gothic", 12F);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(12, 62);
             label2.Name = "label2";
-            label2.Size = new Size(28, 15);
+            label2.Size = new Size(45, 20);
             label2.TabIndex = 6;
             label2.Text = "Pais";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(62, 151);
+            label3.Font = new Font("Showcard Gothic", 12F);
+            label3.ForeColor = SystemColors.ControlLightLight;
+            label3.Location = new Point(13, 115);
             label3.Name = "label3";
-            label3.Size = new Size(29, 15);
+            label3.Size = new Size(44, 20);
             label3.TabIndex = 7;
             label3.Text = "Liga";
             // 
@@ -109,7 +122,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(376, 295);
+            BackColor = SystemColors.HotTrack;
+            ClientSize = new Size(303, 212);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(lblNombre);
@@ -119,6 +133,7 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnInsertarActualizar);
             Name = "FrmInsertarActualizarEquipo";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmInsertarActualizarEquipo";
             Load += FrmInsertarActualizarEquipo_Load;
             ResumeLayout(false);

@@ -33,18 +33,22 @@
             // 
             // btnTorneos
             // 
+            btnTorneos.BackColor = SystemColors.WindowText;
+            btnTorneos.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTorneos.ForeColor = SystemColors.ControlLightLight;
             btnTorneos.Location = new Point(108, 59);
             btnTorneos.Name = "btnTorneos";
             btnTorneos.Size = new Size(122, 50);
             btnTorneos.TabIndex = 1;
             btnTorneos.Text = "Torneo";
-            btnTorneos.UseVisualStyleBackColor = true;
+            btnTorneos.UseVisualStyleBackColor = false;
             btnTorneos.Click += btnTorneos_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.HotTrack;
             ClientSize = new Size(337, 168);
             Controls.Add(btnTorneos);
             Name = "Form1";

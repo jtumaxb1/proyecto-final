@@ -8,6 +8,11 @@ namespace EstructuraDatos.interfaces
 {
     public interface Comparador
     {
+        // Buscar por nombre
+        bool igualQue(string q);
+        bool menorQue(string q);
+        bool mayorQue(string q);
+
         // Buscado
         bool igualQue(int q);
         bool menorQue(int q);

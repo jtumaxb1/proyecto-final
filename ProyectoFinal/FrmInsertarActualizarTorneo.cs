@@ -56,12 +56,14 @@ namespace ProyectoFinal
                     Agregar();
                     this.Close();
                 }
-            } else
+            }
+            else
             {
                 if (this.txtNombre.Text == "")
                 {
                     MessageBox.Show("Los campos no estan llenos, por favor llenar todos los campos", "Insertar/Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } else
+                }
+                else
                 {
                     this.tablaHashTorneo.Actualizar(this.txtNombre.Text, this.clave);
                     MessageBox.Show("Torneo Actualizado correctamente", "Actualizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -69,6 +71,16 @@ namespace ProyectoFinal
                     this.Close();
                 }
             }
+        }
+
+        private void FrmInsertarActualizarTorneo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

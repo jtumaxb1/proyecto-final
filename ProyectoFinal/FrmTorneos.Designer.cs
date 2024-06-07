@@ -34,27 +34,32 @@
             btnActualizar = new Button();
             btnEliminar = new Button();
             btnEquipos = new Button();
-            button6 = new Button();
+            btnRegresar = new Button();
+            btnPartidos = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvTorneos).BeginInit();
             SuspendLayout();
             // 
             // btnInsertar
             // 
-            btnInsertar.Location = new Point(413, 56);
+            btnInsertar.BackColor = SystemColors.MenuText;
+            btnInsertar.Font = new Font("Showcard Gothic", 12F);
+            btnInsertar.ForeColor = SystemColors.ControlLightLight;
+            btnInsertar.Location = new Point(392, 22);
             btnInsertar.Name = "btnInsertar";
-            btnInsertar.Size = new Size(89, 29);
+            btnInsertar.Size = new Size(138, 64);
             btnInsertar.TabIndex = 0;
             btnInsertar.Text = "Insertar";
-            btnInsertar.UseVisualStyleBackColor = true;
+            btnInsertar.UseVisualStyleBackColor = false;
             btnInsertar.Click += btnInsertar_Click;
             // 
             // dgvTorneos
             // 
+            dgvTorneos.BackgroundColor = SystemColors.ControlText;
             dgvTorneos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTorneos.Columns.AddRange(new DataGridViewColumn[] { Liga });
             dgvTorneos.Location = new Point(12, 22);
             dgvTorneos.Name = "dgvTorneos";
-            dgvTorneos.Size = new Size(374, 293);
+            dgvTorneos.Size = new Size(374, 414);
             dgvTorneos.TabIndex = 1;
             dgvTorneos.CellClick += dgvTorneos_CellClick;
             // 
@@ -66,58 +71,88 @@
             // 
             // btnActualizar
             // 
+            btnActualizar.BackColor = SystemColors.MenuText;
             btnActualizar.Enabled = false;
-            btnActualizar.Location = new Point(413, 105);
+            btnActualizar.Font = new Font("Showcard Gothic", 12F);
+            btnActualizar.ForeColor = SystemColors.ControlLightLight;
+            btnActualizar.Location = new Point(392, 92);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(89, 29);
+            btnActualizar.Size = new Size(138, 64);
             btnActualizar.TabIndex = 2;
             btnActualizar.Text = "Actualizar";
-            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.UseVisualStyleBackColor = false;
             btnActualizar.Click += btnActualizar_Click;
             // 
             // btnEliminar
             // 
+            btnEliminar.BackColor = SystemColors.MenuText;
             btnEliminar.Enabled = false;
-            btnEliminar.Location = new Point(413, 155);
+            btnEliminar.Font = new Font("Showcard Gothic", 12F);
+            btnEliminar.ForeColor = SystemColors.ControlLightLight;
+            btnEliminar.Location = new Point(392, 162);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(89, 29);
+            btnEliminar.Size = new Size(138, 64);
             btnEliminar.TabIndex = 3;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEquipos
             // 
+            btnEquipos.BackColor = SystemColors.MenuText;
             btnEquipos.Enabled = false;
-            btnEquipos.Location = new Point(413, 205);
+            btnEquipos.Font = new Font("Showcard Gothic", 12F);
+            btnEquipos.ForeColor = SystemColors.ControlLightLight;
+            btnEquipos.Location = new Point(392, 232);
             btnEquipos.Name = "btnEquipos";
-            btnEquipos.Size = new Size(89, 29);
+            btnEquipos.Size = new Size(138, 64);
             btnEquipos.TabIndex = 4;
             btnEquipos.Text = "Ver Equipos";
-            btnEquipos.UseVisualStyleBackColor = true;
+            btnEquipos.UseVisualStyleBackColor = false;
             btnEquipos.Click += btnEquipos_Click;
             // 
-            // button6
+            // btnRegresar
             // 
-            button6.Location = new Point(413, 255);
-            button6.Name = "button6";
-            button6.Size = new Size(89, 29);
-            button6.TabIndex = 6;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
+            btnRegresar.BackColor = SystemColors.MenuText;
+            btnRegresar.Font = new Font("Showcard Gothic", 12F);
+            btnRegresar.ForeColor = SystemColors.ControlLightLight;
+            btnRegresar.Location = new Point(392, 372);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(138, 64);
+            btnRegresar.TabIndex = 6;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
+            // btnPartidos
+            // 
+            btnPartidos.BackColor = SystemColors.MenuText;
+            btnPartidos.Enabled = false;
+            btnPartidos.Font = new Font("Showcard Gothic", 12F);
+            btnPartidos.ForeColor = SystemColors.ControlLightLight;
+            btnPartidos.Location = new Point(392, 302);
+            btnPartidos.Name = "btnPartidos";
+            btnPartidos.Size = new Size(138, 64);
+            btnPartidos.TabIndex = 7;
+            btnPartidos.Text = "Partidos";
+            btnPartidos.UseVisualStyleBackColor = false;
+            btnPartidos.Click += btnPartidos_Click;
             // 
             // FrmTorneos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(523, 336);
-            Controls.Add(button6);
+            BackColor = SystemColors.HotTrack;
+            ClientSize = new Size(544, 451);
+            Controls.Add(btnPartidos);
+            Controls.Add(btnRegresar);
             Controls.Add(btnEquipos);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
             Controls.Add(dgvTorneos);
             Controls.Add(btnInsertar);
             Name = "FrmTorneos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmTorneos";
             Load += FrmTorneos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTorneos).EndInit();
@@ -131,7 +166,8 @@
         private Button btnActualizar;
         private Button btnEliminar;
         private Button btnEquipos;
-        private Button button6;
+        private Button btnRegresar;
         private DataGridViewTextBoxColumn Liga;
+        private Button btnPartidos;
     }
 }

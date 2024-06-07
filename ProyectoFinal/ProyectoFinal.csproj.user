@@ -10,7 +10,19 @@
     <Compile Update="FrmInsertarActualizarEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmInsertarActualizarJugador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmInsertarActualizarPartido.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmInsertarActualizarTorneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmJugadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmPartidos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmTorneos.cs">

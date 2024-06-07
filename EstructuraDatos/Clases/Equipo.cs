@@ -13,14 +13,43 @@ namespace EstructuraDatos.Clases
         public string nombre { get; set; }
         public string pais { get; set; }
         public string liga { get; set; }
+        public int puntos { get; set; }
 
         public Equipo(int id, string nombre, string pais, string liga) {
             this.id = id;
             this.nombre = nombre;
             this.pais = pais;
             this.liga = liga;
+            this.puntos = 0;
         }
 
+        public bool igualQue(string q)
+        {
+            return this.nombre == q;
+        }
+
+        public bool menorQue(string q)
+        {
+            if (this.nombre.CompareTo(q) < 0)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+        }
+
+        public bool mayorQue(string q)
+        {
+            if (this.nombre.CompareTo(q) > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool igualQue(int q)
         {
             return this.id == q;

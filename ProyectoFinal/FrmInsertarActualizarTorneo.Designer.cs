@@ -31,11 +31,12 @@
             txtNombre = new TextBox();
             label1 = new Label();
             btnGuardar = new Button();
+            btnRegresar = new Button();
             SuspendLayout();
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(41, 42);
+            txtNombre.Location = new Point(12, 32);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(260, 23);
             txtNombre.TabIndex = 0;
@@ -43,32 +44,54 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(41, 24);
+            label1.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(109, 9);
             label1.Name = "label1";
-            label1.Size = new Size(51, 15);
+            label1.Size = new Size(78, 20);
             label1.TabIndex = 1;
             label1.Text = "Nombre";
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(121, 89);
+            btnGuardar.BackColor = SystemColors.MenuText;
+            btnGuardar.Font = new Font("Showcard Gothic", 12F);
+            btnGuardar.ForeColor = SystemColors.ControlLightLight;
+            btnGuardar.Location = new Point(12, 61);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(97, 35);
+            btnGuardar.Size = new Size(125, 55);
             btnGuardar.TabIndex = 2;
             btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnRegresar
+            // 
+            btnRegresar.BackColor = SystemColors.MenuText;
+            btnRegresar.Font = new Font("Showcard Gothic", 12F);
+            btnRegresar.ForeColor = SystemColors.ControlLightLight;
+            btnRegresar.Location = new Point(147, 61);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(125, 55);
+            btnRegresar.TabIndex = 3;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // FrmInsertarActualizarTorneo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(350, 153);
+            BackColor = SystemColors.HotTrack;
+            ClientSize = new Size(284, 131);
+            Controls.Add(btnRegresar);
             Controls.Add(btnGuardar);
             Controls.Add(label1);
             Controls.Add(txtNombre);
             Name = "FrmInsertarActualizarTorneo";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmInsertarActualizarTorneo";
+            Load += FrmInsertarActualizarTorneo_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -78,5 +101,6 @@
         private TextBox txtNombre;
         private Label label1;
         private Button btnGuardar;
+        private Button btnRegresar;
     }
 }

@@ -28,110 +28,163 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvEquipos = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Pais = new DataGridViewTextBoxColumn();
-            Liga = new DataGridViewTextBoxColumn();
             btnInsertar = new Button();
             btnActualizar = new Button();
             btnEliminar = new Button();
             btnSalir = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            btnJugadores = new Button();
+            Id = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Pais = new DataGridViewTextBoxColumn();
+            dgvEquipos = new DataGridView();
+            IdEquipo1 = new DataGridViewTextBoxColumn();
+            nombreEquipo1 = new DataGridViewTextBoxColumn();
+            ligaEquipo = new DataGridViewTextBoxColumn();
+            paisEquipo = new DataGridViewTextBoxColumn();
+            puntos = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvEquipos).BeginInit();
             SuspendLayout();
             // 
-            // dgvEquipos
+            // btnInsertar
             // 
-            dgvEquipos.AllowUserToDeleteRows = false;
-            dgvEquipos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEquipos.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Pais, Liga });
-            dgvEquipos.Location = new Point(12, 12);
-            dgvEquipos.Name = "dgvEquipos";
-            dgvEquipos.ReadOnly = true;
-            dgvEquipos.Size = new Size(374, 293);
-            dgvEquipos.TabIndex = 0;
-            dgvEquipos.CellClick += dgvEquipos_CellClick;
+            btnInsertar.BackColor = SystemColors.WindowText;
+            btnInsertar.Font = new Font("Showcard Gothic", 12F);
+            btnInsertar.ForeColor = SystemColors.ControlLightLight;
+            btnInsertar.Location = new Point(461, 12);
+            btnInsertar.Name = "btnInsertar";
+            btnInsertar.Size = new Size(136, 53);
+            btnInsertar.TabIndex = 1;
+            btnInsertar.Text = "Insertar";
+            btnInsertar.UseVisualStyleBackColor = false;
+            btnInsertar.Click += btnInsertar_Click;
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.BackColor = SystemColors.WindowText;
+            btnActualizar.Enabled = false;
+            btnActualizar.Font = new Font("Showcard Gothic", 12F);
+            btnActualizar.ForeColor = SystemColors.ControlLightLight;
+            btnActualizar.Location = new Point(461, 71);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(136, 53);
+            btnActualizar.TabIndex = 2;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = SystemColors.WindowText;
+            btnEliminar.Enabled = false;
+            btnEliminar.Font = new Font("Showcard Gothic", 12F);
+            btnEliminar.ForeColor = SystemColors.ControlLightLight;
+            btnEliminar.Location = new Point(461, 130);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(136, 53);
+            btnEliminar.TabIndex = 3;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = SystemColors.WindowText;
+            btnSalir.Font = new Font("Showcard Gothic", 12F);
+            btnSalir.ForeColor = SystemColors.ControlLightLight;
+            btnSalir.Location = new Point(461, 189);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(136, 53);
+            btnSalir.TabIndex = 4;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // btnJugadores
+            // 
+            btnJugadores.BackColor = SystemColors.WindowText;
+            btnJugadores.Enabled = false;
+            btnJugadores.Font = new Font("Showcard Gothic", 12F);
+            btnJugadores.ForeColor = SystemColors.ControlLightLight;
+            btnJugadores.Location = new Point(461, 248);
+            btnJugadores.Name = "btnJugadores";
+            btnJugadores.Size = new Size(136, 53);
+            btnJugadores.TabIndex = 5;
+            btnJugadores.Text = "Jugadores";
+            btnJugadores.UseVisualStyleBackColor = false;
+            btnJugadores.Click += btnJugadores_Click;
             // 
             // Id
             // 
             Id.HeaderText = "Id";
             Id.Name = "Id";
-            Id.ReadOnly = true;
             Id.Visible = false;
             // 
             // Nombre
             // 
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
             Nombre.Width = 111;
             // 
             // Pais
             // 
             Pais.HeaderText = "Pais";
             Pais.Name = "Pais";
-            Pais.ReadOnly = true;
             Pais.Width = 111;
             // 
-            // Liga
+            // dgvEquipos
             // 
-            Liga.HeaderText = "Liga";
-            Liga.Name = "Liga";
-            Liga.ReadOnly = true;
-            Liga.Width = 110;
+            dgvEquipos.BackgroundColor = SystemColors.WindowText;
+            dgvEquipos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEquipos.Columns.AddRange(new DataGridViewColumn[] { IdEquipo1, nombreEquipo1, ligaEquipo, paisEquipo, puntos });
+            dgvEquipos.Location = new Point(12, 12);
+            dgvEquipos.Name = "dgvEquipos";
+            dgvEquipos.Size = new Size(443, 289);
+            dgvEquipos.TabIndex = 6;
+            dgvEquipos.CellClick += dgvEquipos_CellClick_1;
             // 
-            // btnInsertar
+            // IdEquipo1
             // 
-            btnInsertar.Location = new Point(424, 45);
-            btnInsertar.Name = "btnInsertar";
-            btnInsertar.Size = new Size(89, 35);
-            btnInsertar.TabIndex = 1;
-            btnInsertar.Text = "Insertar";
-            btnInsertar.UseVisualStyleBackColor = true;
-            btnInsertar.Click += btnInsertar_Click;
+            IdEquipo1.HeaderText = "Id";
+            IdEquipo1.Name = "IdEquipo1";
+            IdEquipo1.SortMode = DataGridViewColumnSortMode.NotSortable;
+            IdEquipo1.Visible = false;
             // 
-            // btnActualizar
+            // nombreEquipo1
             // 
-            btnActualizar.Enabled = false;
-            btnActualizar.Location = new Point(424, 109);
-            btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(89, 35);
-            btnActualizar.TabIndex = 2;
-            btnActualizar.Text = "Actualizar";
-            btnActualizar.UseVisualStyleBackColor = true;
-            btnActualizar.Click += btnActualizar_Click;
+            nombreEquipo1.HeaderText = "Nombre";
+            nombreEquipo1.Name = "nombreEquipo1";
+            nombreEquipo1.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
-            // btnEliminar
+            // ligaEquipo
             // 
-            btnEliminar.Enabled = false;
-            btnEliminar.Location = new Point(424, 170);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(89, 35);
-            btnEliminar.TabIndex = 3;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
+            ligaEquipo.HeaderText = "Liga";
+            ligaEquipo.Name = "ligaEquipo";
+            ligaEquipo.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
-            // btnSalir
+            // paisEquipo
             // 
-            btnSalir.Location = new Point(424, 238);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(89, 35);
-            btnSalir.TabIndex = 4;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            paisEquipo.HeaderText = "Pais";
+            paisEquipo.Name = "paisEquipo";
+            paisEquipo.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // puntos
+            // 
+            puntos.HeaderText = "Puntos";
+            puntos.Name = "puntos";
             // 
             // FrmEquipos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(546, 317);
+            BackColor = SystemColors.HotTrack;
+            ClientSize = new Size(610, 319);
+            Controls.Add(dgvEquipos);
+            Controls.Add(btnJugadores);
             Controls.Add(btnSalir);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
             Controls.Add(btnInsertar);
-            Controls.Add(dgvEquipos);
             Name = "FrmEquipos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmEquipos";
@@ -141,15 +194,20 @@
         }
 
         #endregion
-
-        private DataGridView dgvEquipos;
         private Button btnInsertar;
         private Button btnActualizar;
         private Button btnEliminar;
         private Button btnSalir;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button btnJugadores;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Pais;
-        private DataGridViewTextBoxColumn Liga;
+        private DataGridView dgvEquipos;
+        private DataGridViewTextBoxColumn IdEquipo1;
+        private DataGridViewTextBoxColumn nombreEquipo1;
+        private DataGridViewTextBoxColumn ligaEquipo;
+        private DataGridViewTextBoxColumn paisEquipo;
+        private DataGridViewTextBoxColumn puntos;
     }
 }

@@ -83,5 +83,10 @@ namespace ProyectoFinal
             this.txtLiga.Text = liga;
             this.txtLiga.Enabled = false;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

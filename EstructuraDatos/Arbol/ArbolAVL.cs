@@ -27,6 +27,41 @@ namespace EstructuraDatos.Arbol
             return raiz;
         }
 
+        protected Object buscarPorNombre(NodoArbolBusqueda raizSub, string buscado)
+        {
+            try
+            {
+                Equipo dato = (Equipo)raizSub.valorNodo();
+                if (raizSub == null)
+                {
+                    return null;
+                } else if (dato.igualQue(buscado))
+                {
+                    return dato;
+                } else if (dato.menorQue(buscado))
+                {
+                    return buscarPorNombre(raizSub.subArbolDcho(), buscado);
+                } else
+                {
+                    return buscarPorNombre(raizSub.subArbolIzdo(), buscado);
+                }
+            } catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public Object buscarPorNombre(string dato)
+        {
+            if (raiz == null)
+            {
+                return null;
+            } else
+            {
+                return buscarPorNombre(raizArbol(), dato);
+            }
+        }
+
         public Object buscar(int dato)
         {
             if (raiz == null)
@@ -155,18 +190,19 @@ namespace EstructuraDatos.Arbol
 
         private NodoAvl actualizarAvl(NodoAvl raiz, Comparador dt, Logical h) {
             NodoAvl n1;
-            if (dt.igualQue(raiz.valorNodo()))
+            Equipo dato = (Equipo)raiz.valorNodo();
+            if (dt.igualQue(dato.nombre))
             {
                 raiz.nuevoValor(dt);
                 h.setLogical(true);
             }
-            else if (dt.menorQue(raiz.valorNodo()))
+            else if (dt.menorQue(dato.nombre))
             {
                 NodoAvl iz;
                 iz = actualizarAvl((NodoAvl)raiz.subArbolIzdo(), dt, h);
                 raiz.ramaIzdo(iz);
             }
-            else if (dt.mayorQue(raiz.valorNodo()))
+            else if (dt.mayorQue(dato.nombre))
             {
                 NodoAvl dr;
                 dr = actualizarAvl((NodoAvl)raiz.subArbolDcho(), dt, h);
@@ -192,67 +228,70 @@ namespace EstructuraDatos.Arbol
                 raiz = new NodoAvl(dt);
                 this.cantidad += 1;
                 h.setLogical(true);
-            }
-            else if (dt.menorQue(raiz.valorNodo()))
+            } else
             {
-                NodoAvl iz;
-                iz = insertarAvl((NodoAvl)raiz.subArbolIzdo(), dt, h);
-                raiz.ramaIzdo(iz);
-                // regreso por los nodos del camino de búsqueda
-                if (h.booleanValue())
+                Equipo equipo = (Equipo)raiz.valorNodo();
+                if (dt.menorQue(equipo.nombre))
                 {
-                    // decrementa el fe por aumentar la altura de rama izquierda
-                    switch (raiz.fe)
+                    NodoAvl iz;
+                    iz = insertarAvl((NodoAvl)raiz.subArbolIzdo(), dt, h);
+                    raiz.ramaIzdo(iz);
+                    // regreso por los nodos del camino de búsqueda
+                    if (h.booleanValue())
                     {
-                        case 1:
-                            raiz.fe = 0;
-                            h.setLogical(false);
-                            break;
-                        case 0:
-                            raiz.fe = -1;
-                            break;
-                        case -1: // aplicar rotación a la izquierda
-                            n1 = (NodoAvl)raiz.subArbolIzdo();
-                            if (n1.fe == -1)
-                                raiz = rotacionII(raiz, n1);
-                            else
-                                raiz = rotacionID(raiz, n1);
-                            h.setLogical(false);
-                            break;
+                        // decrementa el fe por aumentar la altura de rama izquierda
+                        switch (raiz.fe)
+                        {
+                            case 1:
+                                raiz.fe = 0;
+                                h.setLogical(false);
+                                break;
+                            case 0:
+                                raiz.fe = -1;
+                                break;
+                            case -1: // aplicar rotación a la izquierda
+                                n1 = (NodoAvl)raiz.subArbolIzdo();
+                                if (n1.fe == -1)
+                                    raiz = rotacionII(raiz, n1);
+                                else
+                                    raiz = rotacionID(raiz, n1);
+                                h.setLogical(false);
+                                break;
+                        }
                     }
                 }
-            }
-            else if (dt.mayorQue(raiz.valorNodo()))
-            {
-                NodoAvl dr;
-                dr = insertarAvl((NodoAvl)raiz.subArbolDcho(), dt, h);
-                raiz.ramaDcho(dr);
-                // regreso por los nodos del camino de búsqueda
-                if (h.booleanValue())
+                else if (dt.mayorQue(equipo.nombre))
                 {
-                    // incrementa el fe por aumentar la altura de rama izquierda
-                    switch (raiz.fe)
+                    NodoAvl dr;
+                    dr = insertarAvl((NodoAvl)raiz.subArbolDcho(), dt, h);
+                    raiz.ramaDcho(dr);
+                    // regreso por los nodos del camino de búsqueda
+                    if (h.booleanValue())
                     {
-                        case 1: // aplicar rotación a la derecha
-                            n1 = (NodoAvl)raiz.subArbolDcho();
-                            if (n1.fe == +1)
-                                raiz = rotacionDD(raiz, n1);
-                            else
-                                raiz = rotacionDI(raiz, n1);
-                            h.setLogical(false);
-                            break;
-                        case 0:
-                            raiz.fe = +1;
-                            break;
-                        case -1:
-                            raiz.fe = 0;
-                            h.setLogical(false);
-                            break;
+                        // incrementa el fe por aumentar la altura de rama izquierda
+                        switch (raiz.fe)
+                        {
+                            case 1: // aplicar rotación a la derecha
+                                n1 = (NodoAvl)raiz.subArbolDcho();
+                                if (n1.fe == +1)
+                                    raiz = rotacionDD(raiz, n1);
+                                else
+                                    raiz = rotacionDI(raiz, n1);
+                                h.setLogical(false);
+                                break;
+                            case 0:
+                                raiz.fe = +1;
+                                break;
+                            case -1:
+                                raiz.fe = 0;
+                                h.setLogical(false);
+                                break;
+                        }
                     }
                 }
+                else
+                    throw new Exception("No puede haber claves repetidas ");
             }
-            else
-                throw new Exception("No puede haber claves repetidas ");
             return raiz;
         }
 
@@ -393,11 +432,11 @@ namespace EstructuraDatos.Arbol
             return raiz == null;
         }
 
-        public static List<Object> orden(NodoArbolBusqueda r, List<Object> lista)
+        public static List<Equipo> orden(NodoArbolBusqueda r, List<Equipo> lista)
         {
             if (r != null)
             {
-                lista.Add(r.valorNodo());
+                lista.Add((Equipo)r.valorNodo());
                 if (r.subArbolIzdo() != null)
                 {
                     orden(r.subArbolIzdo(), lista);
@@ -411,7 +450,7 @@ namespace EstructuraDatos.Arbol
         }
 
         //Devuelve el número de nodos que tiene el árbol
-        public static int numNodos(NodoArbolBusqueda raiz)
+        public int numNodos(NodoArbolBusqueda raiz)
         {
             if (raiz == null)
                 return 0;

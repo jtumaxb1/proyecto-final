@@ -15,10 +15,15 @@ namespace ProyectoFinal
     public partial class FrmTorneos : Form
     {
         public TablaHashTorneo tablaHashTorneo;
+        public TablaHashJugador tablaHashJugador;
+        public TablaHashPartido tablaHashPartido;
+
         public string liga;
-        public FrmTorneos(TablaHashTorneo torneo)
+        public FrmTorneos(TablaHashTorneo torneo, TablaHashJugador tablaHashJugador, TablaHashPartido tablaHashPartido)
         {
             this.tablaHashTorneo = torneo;
+            this.tablaHashJugador = tablaHashJugador;
+            this.tablaHashPartido = tablaHashPartido;
             InitializeComponent();
         }
 
@@ -61,12 +66,14 @@ namespace ProyectoFinal
                 this.btnActualizar.Enabled = true;
                 this.btnEliminar.Enabled = true;
                 this.btnEquipos.Enabled = true;
+                this.btnPartidos.Enabled = true;
             }
             else
             {
                 this.btnActualizar.Enabled = false;
                 this.btnEliminar.Enabled = false;
                 this.btnEquipos.Enabled = false;
+                this.btnPartidos.Enabled = false;
             }
         }
 
@@ -92,8 +99,26 @@ namespace ProyectoFinal
         private void btnEquipos_Click(object sender, EventArgs e)
         {
             Torneo torneoSeleccionado = (Torneo)tablaHashTorneo.Buscar(this.liga);
-            FrmEquipos frmEquipos = new FrmEquipos(torneoSeleccionado.arbol, this.liga);
+            FrmEquipos frmEquipos = new FrmEquipos(torneoSeleccionado.arbol, this.liga, this.tablaHashJugador);
             frmEquipos.ShowDialog();
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPartidos_Click(object sender, EventArgs e)
+        {
+            Torneo torneoSeleccionado = (Torneo)tablaHashTorneo.Buscar(this.liga);
+            int numNodos = torneoSeleccionado.arbol.numNodos(torneoSeleccionado.arbol.raizArbol());
+            if (numNodos > 1) {
+                FrmPartidos frmPartidos = new FrmPartidos(torneoSeleccionado.arbol, this.liga, this.tablaHashPartido);
+                frmPartidos.ShowDialog();
+            } else
+            {
+                MessageBox.Show("La cantidad de equipos es muy baja, por favor ingrese minimo 2 equipos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
         }
     }
 }

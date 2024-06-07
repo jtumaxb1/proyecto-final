@@ -9,7 +9,8 @@ namespace ProyectoFinal
 
         ArbolAVL arbolAVL = new ArbolAVL();
         TablaHashTorneo tablaHashTorneo = new TablaHashTorneo();
-
+        TablaHashJugador tablaHashJugador = new TablaHashJugador();
+        TablaHashPartido tablaHashPartido = new TablaHashPartido();
         public Form1()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace ProyectoFinal
 
         private void btnTorneos_Click(object sender, EventArgs e)
         {
-            FrmTorneos frmTorneos = new FrmTorneos(tablaHashTorneo);
+            FrmTorneos frmTorneos = new FrmTorneos(tablaHashTorneo, tablaHashJugador, tablaHashPartido);
             frmTorneos.ShowDialog();
         }
     }
